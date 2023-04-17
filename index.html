@@ -1,99 +1,324 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Trabalho 1</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-  <h1>Trabalho 1 Probabilidade e Estatistica</h1>
-  <h5>Caio Cohen de Souza - 119021543</h5>
-  <div class="container">
-    <p>Introdução: As questões do trabalho 1 serão todas respondidas nessa página. Eu optei por usar HTML pois javascript é a linguagem que eu estou mais familiarizado.</p>
-  <p>A funções usadas nas questão 1 foram:</p>
-  <ul>
-    <li>
-        jogarCrap()
-    </li>
-    <li>
-        jogarCrap5vezes()
-    </li>
-    <li>
-        jogarCrapVariasVezes()
-    </li>
-    <li>
-        calcularSaldo()
-    </li>
-  </ul>
-  <p>Todo o código usado pode ser conferido no  <a href="https://github.com/CaioCohen/ProbabilitySimulator" target="_blank">meu github</a></p>
-    <div class="row">
+  <head>
+    <meta charset="utf-8" />
+    <title>Trabalho 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Trabalho 1 Probabilidade e Estatistica</h1>
+    <h5>Caio Cohen de Souza - 119021543</h5>
+    <div class="container">
+      <p>
+        Introdução: As questões do trabalho 1 serão todas respondidas nessa
+        página. Eu optei por usar HTML pois javascript é a linguagem que eu
+        estou mais familiarizado.
+      </p>
+      <p>A funções usadas nas questão 1 foram:</p>
+      <ul>
+        <li>jogarCrap()</li>
+        <li>jogarCrap5vezes()</li>
+        <li>jogarCrapVariasVezes()</li>
+        <li>calcularSaldo()</li>
+      </ul>
+      <p>
+        Todo o código usado pode ser conferido no
+        <a
+          href="https://github.com/CaioCohen/ProbabilitySimulator"
+          target="_blank"
+          >meu github</a
+        >
+      </p>
+      <div class="row">
         <p>
-            <span class="bold">Questão 1:</span><span> Num jogo de craps dois dados são lançados. Se o jogador tira 7 ou 11 na soma das faces voltadas
-                para cima, ele ganha. Se ele tira 2, 3 ou 12 ele perde. Nos outros casos ele continua jogando os dois dados até
-                sair 7, caso em que ele perde, ou então sair novamente o primeiro resultado, caso em que ele ganha.</span>
+          <span class="bold">Questão 1:</span
+          ><span>
+            Num jogo de craps dois dados são lançados. Se o jogador tira 7 ou 11
+            na soma das faces voltadas para cima, ele ganha. Se ele tira 2, 3 ou
+            12 ele perde. Nos outros casos ele continua jogando os dois dados
+            até sair 7, caso em que ele perde, ou então sair novamente o
+            primeiro resultado, caso em que ele ganha.</span
+          >
         </p>
         <p>
-            <!--Questão 1-1-->
-            1. Escreva um programa de computador que simule um resultado de um jogo de Craps. O programa deve
-retornar uma lista com um dos elementos sendo o vetor com os valores das somas dos dados obtidos em
-sequência até terminar o jogo e o outro elemento sendo identificando se o resultado foi uma vitória ou uma
-derrota (pode ser um inteiro 0 ou 1, ou então uma string, como preferir).
+          <!--Questão 1-1-->
+          1. Escreva um programa de computador que simule um resultado de um
+          jogo de Craps. O programa deve retornar uma lista com um dos elementos
+          sendo o vetor com os valores das somas dos dados obtidos em sequência
+          até terminar o jogo e o outro elemento sendo identificando se o
+          resultado foi uma vitória ou uma derrota (pode ser um inteiro 0 ou 1,
+          ou então uma string, como preferir).
         </p>
         <div class="resposta">
-            <p><span class="bold">Resposta:</span> Ao clicar no botão abaixo, você simulará o jogo de Craps. A questão diz pra retornar uma lista, onde o primeiro elemento é um vetor e o segundo uma boolean ou string. No meu caso, em vez de "retornar" essa lista, eu simplesmente mostrei ambos na tela, espero que não tenha problema.</p>
-            <br />
-            <button class="btn btn-primary" onclick="jogarCrap()">Jogar</button>
-            <p id="resultadoJogo1"></p>
-            <span class="bold">Jogadas: </span><p id="somas1"></p>
+          <p>
+            <span class="bold">Resposta:</span> Ao clicar no botão abaixo, você
+            simulará o jogo de Craps. A questão diz pra retornar uma lista, onde
+            o primeiro elemento é um vetor e o segundo uma boolean ou string. No
+            meu caso, em vez de "retornar" essa lista, eu simplesmente mostrei
+            ambos na tela, espero que não tenha problema.
+          </p>
+          <br />
+          <button class="btn btn-primary" onclick="jogarCrap()">Jogar</button>
+          <p id="resultadoJogo1"></p>
+          <span class="bold">Jogadas: </span>
+          <p id="somas1"></p>
         </div>
         <!--Questão 1-2-->
         <p>
-            2. Rode o programa anterior 5 vezes e reporte os diferentes resultados obtidos (vetores com valores das faces
-            e a conclusão - vitória ou derrota).
+          2. Rode o programa anterior 5 vezes e reporte os diferentes resultados
+          obtidos (vetores com valores das faces e a conclusão - vitória ou
+          derrota).
         </p>
         <div class="resposta">
-            <p><span class="bold">Resposta:</span> Ao clicar no botão abaixo, você simulará 5 jogos de Craps.</p>
-            <br />
-            <button class="btn btn-primary" onclick="jogarCrap5Vezes()">Jogar 5 vezes</button>
-            <div id="resultadoJogo2"></div>
+          <p>
+            <span class="bold">Resposta:</span> Ao clicar no botão abaixo, você
+            simulará 5 jogos de Craps.
+          </p>
+          <br />
+          <button class="btn btn-primary" onclick="jogarCrap5Vezes()">
+            Jogar 5 vezes
+          </button>
+          <div id="resultadoJogo2"></div>
         </div>
         <!--Questão 1-3-->
         <p>
-            3. Utilize o programa criado por você para estimar a probabilidade de vitória no jogo de Craps. Para isso
-você deve rodar o programa muitas vezes (quanto mais vezes melhor) e calcular a proporção de partidas
-que resultou em vitória.
+          3. Utilize o programa criado por você para estimar a probabilidade de
+          vitória no jogo de Craps. Para isso você deve rodar o programa muitas
+          vezes (quanto mais vezes melhor) e calcular a proporção de partidas
+          que resultou em vitória.
         </p>
         <div class="resposta">
-            <p><span class="bold">Resposta:</span> Ao clicar no botão abaixo, você simulará o jogo de Craps <input type="number" id="nvezes" style="width: auto;"></input>vezes.</p>
-            <br />
-            <button class="btn btn-primary" onclick="jogarCrapVariasVezes(10000)">Jogar</button>
-            <p id="resultadoJogo3"></p>
-            <p>Quando simulamos o jogo uma quantidade alta o suficiente, é possível perceber que o valor converge para os 49%. Isso se deve por conta da "Lei dos Grandes Números", que é basicamente quanto mais vezes um experimento se repete, a frequência com que os eventos ocorrem se aproxima cada vez mais da probabilidade real de ocorrerem.</p>
+          <p>
+            <span class="bold">Resposta:</span> Ao clicar no botão abaixo, você
+            simulará o jogo de Craps
+            <input type="number" id="nvezes" style="width: auto" />vezes.
+          </p>
+          <br />
+          <button class="btn btn-primary" onclick="jogarCrapVariasVezes(10000)">
+            Jogar
+          </button>
+          <p id="resultadoJogo3"></p>
+          <p>
+            Quando simulamos o jogo uma quantidade alta o suficiente, é possível
+            perceber que o valor converge para os 49%. Isso se deve por conta da
+            "Lei dos Grandes Números", que é basicamente quanto mais vezes um
+            experimento se repete, a frequência com que os eventos ocorrem se
+            aproxima cada vez mais da probabilidade real de ocorrerem.
+          </p>
         </div>
 
         <!--Questão 1-4-->
-        <p>
-            4. Qual é a chance de que o jogo nunca termine? Justifique.
-        </p>
+        <p>4. Qual é a chance de que o jogo nunca termine? Justifique.</p>
         <div class="resposta">
-            <p><span class="bold">Resposta:</span> Eu diria que é zero, ou melhor, tende a zero. Para que o jogo nunca termine, ele teria que ter o azar impossível de não tirar nem 7 (1/6 de chance) nem 2,3 ou 12 (1/9 de chance) na primeira, e não tirar nunca o 7 ou o valor inicial dele nas próximas. Porém, como dito na questão acima, o 7 é o valor com a maior chance, e o que ele tirou inicialmente, dado que ele não ganhou nem perdeu, tende ao segundo mais provável. Não só as chances de o jogo terminar em menos de 10 jogadas é muito alta, como mesmo se fosse super baixa, se testadas um número suficiente de vezes, uma hora acontecerá.</p>
+          <p>
+            <span class="bold">Resposta:</span> Eu diria que é zero, ou melhor,
+            tende a zero. Para que o jogo nunca termine, ele teria que ter o
+            azar impossível de não tirar nem 7 (1/6 de chance) nem 2,3 ou 12
+            (1/9 de chance) na primeira, e não tirar nunca o 7 ou o valor
+            inicial dele nas próximas. Porém, como dito na questão acima, o 7 é
+            o valor com a maior chance, e o que ele tirou inicialmente, dado que
+            ele não ganhou nem perdeu, tende ao segundo mais provável. Não só as
+            chances de o jogo terminar em menos de 10 jogadas é muito alta, como
+            mesmo se fosse super baixa, se testadas um número suficiente de
+            vezes, uma hora acontecerá.
+          </p>
         </div>
 
         <!--Questão 1-5-->
         <p>
-            5. Se você paga 1 real quando perde o jogo e recebe 1 real como prêmio quando ganha, qual foi o saldo final
-em reais ao final de todos os jogos simulados por você? O que se pode conjecturar sobre o resultado final
-de muitas apostas sucessivas num jogo de Craps quanto ao retorno financeiro?
+          5. Se você paga 1 real quando perde o jogo e recebe 1 real como prêmio
+          quando ganha, qual foi o saldo final em reais ao final de todos os
+          jogos simulados por você? O que se pode conjecturar sobre o resultado
+          final de muitas apostas sucessivas num jogo de Craps quanto ao retorno
+          financeiro?
         </p>
         <div class="resposta">
-            <p><span class="bold">Resposta:</span> Como foi extimado acima, as chances reais de você vencer um jogo de Craps aproxima-se de 49%. O que significa que se o seu objetivo é ganhar dinheiro jogando, sua melhor aposta é jogar uma única vez e torcer pra cair nesses 49%, pois, de acordo com a Lei dos Grandes Números, quanto mais vezes você joga, mais próximo a sua taxa de sucesso se aproximará dos 49% e você sair perdendo.</p>
-            <p>Se realizarmos a simulação do item 3, por exemplo, poderemos calcular o saldo final apertando no botão abaixo: </p>
-            <button class="btn btn-primary" onclick="calcularSaldo()">Calcular Saldo</button>
-            <p id="saldo"></p>
+          <p>
+            <span class="bold">Resposta:</span> Como foi extimado acima, as
+            chances reais de você vencer um jogo de Craps aproxima-se de 49%. O
+            que significa que se o seu objetivo é ganhar dinheiro jogando, sua
+            melhor aposta é jogar uma única vez e torcer pra cair nesses 49%,
+            pois, de acordo com a Lei dos Grandes Números, quanto mais vezes
+            você joga, mais próximo a sua taxa de sucesso se aproximará dos 49%
+            e você sair perdendo.
+          </p>
+          <p>
+            Se realizarmos a simulação do item 3, por exemplo, poderemos
+            calcular o saldo final apertando no botão abaixo:
+          </p>
+          <button class="btn btn-primary" onclick="calcularSaldo()">
+            Calcular Saldo
+          </button>
+          <p id="saldo"></p>
         </div>
+
+        <p>
+          <span class="bold">Questão 2: </span>Em aula, calculamos a
+          probabilidade de acertar exatamente 5 números na mega sena (acertar na
+          quina) tendo escolhido um bilhete de 6 números. Lembre-se que na Mega
+          Sena são sorteados 6 números de 1 a 60 aleatoriamente sem repetições.
+        </p>
+        <p>A funções usadas nas questão 2 foram:</p>
+      <ul>
+        <li>jogarMegaSenaQuina()</li>
+        <li>ateQuinaMegaSena()</li>
+        <li>estimarMegaSenaQuina()</li>
+        <li>ate4MegaSena()</li>
+        <li>estimarMegaSena4()</li>
+      </ul>
+        <!--Questão 2-1-->
+        <p>
+          1. Escolha um bilhete de 6 números. Escreva um programa que simule um
+          sorteio da Mega Sena e diga se você acertou ou não na quina.
+        </p>
+        <div class="resposta">
+          <p>
+            <span class="bold">Resposta:</span> Escreva abaixo os 6 numeros,
+            entre 1 e 60, que você pretende apostar e depois clique no botão pra
+            revelar a série sorteada.
+          </p>
+          <input
+            class="numeroMegaSena"
+            onblur="validarEscolhasSorteio()"
+            type="number"
+            id="escolha1"
+          />
+          <input
+            class="numeroMegaSena"
+            onblur="validarEscolhasSorteio()"
+            type="number"
+            id="escolha2"
+          />
+          <input
+            class="numeroMegaSena"
+            onblur="validarEscolhasSorteio()"
+            type="number"
+            id="escolha3"
+          />
+          <input
+            class="numeroMegaSena"
+            onblur="validarEscolhasSorteio()"
+            type="number"
+            id="escolha4"
+          />
+          <input
+            class="numeroMegaSena"
+            onblur="validarEscolhasSorteio()"
+            type="number"
+            id="escolha5"
+          />
+          <input
+            class="numeroMegaSena"
+            onblur="validarEscolhasSorteio()"
+            type="number"
+            id="escolha6"
+          />
+          <br />
+          <br />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            style="display: none"
+            id="alertaRepeticao"
+          >
+            Não pode repetir números.
+          </div>
+          <button class="btn btn-primary" onclick="jogarMegaSenaQuina()">
+            Jogar
+          </button>
+          <p id="sorteados1"></p>
+          <p id="resultadoMegaSena1"></p>
+        </div>
+
+        <!--Questão 2-2-->
+        <p>
+          2. Utilize o programa criado por você para estimar a probabilidade de
+          acertar na quina e compare com o valor obtido em sala de aula.
+        </p>
+        <div class="resposta">
+          <p>
+            <span class="bold">Resposta:</span> Ainda usando os mesmos valores
+            inputados no item anterior, ao clicar no botão abaixo, ele irá
+            mostrar quantos sorteios foram necessários para você acertar pelo
+            menos na quina.
+          </p>
+
+          <button class="btn btn-primary" onclick="ateQuinaMegaSena()">
+            Jogar
+          </button>
+          <p id="sorteados2"></p>
+          <br />
+          <p>
+            Agora, ao clicar no botão abaixo, ele irá jogar até acertar na quina
+            100 vezes e retornar a média de sorteios necessários para acertar,
+            pelo menos, na quina.
+          </p>
+          <p>
+            100 vezes pode não ser um número muito alto para podermos estimar
+            com precisão, mas a questão é que só uma rodada ja necessita cerca
+            de dezenas de milhares de sorteios para se conseguir uma quina, isso
+            multiplicado 100 vezes pode dar alguns milhões, o que deixa o
+            programa mais lento.
+          </p>
+          <button class="btn btn-primary" onclick="estimarMegaSenaQuina()">
+            Estimar
+          </button>
+          <br />
+          <p id="sorteando" style="display: none">
+            Relizando testes, aguarde...
+          </p>
+          <p id="sorteados3"></p>
+        </div>
+
+        <!--Questão 2-3-->
+        <p>
+          3. Modifique o programa para verificar se você acertou exatamente 4
+          números ou não.
+        </p>
+        <div class="resposta">
+          <p>
+            <span class="bold">Resposta:</span> Essa verificação pode ser feita
+            no item 2-1, pois ele realiza uma simulação de jogo e te diz quantos
+            você acertou.
+          </p>
+        </div>
+
+        <!--Questão 2-4-->
+        <p>
+            4. Utilize o programa criado no item anterior para estimar a probabilidade de acertar exatamente 4 números
+            da Mega Sena tendo escolhido um bilhete de 6 números.
+        </p>
+        <div class="resposta">
+          <p>
+            <span class="bold">Resposta:</span> Assim como no item 2-2, ainda usando os valores inputados no primeiro item, ao clicar no botão abaixo, ele te dirá o numero de sorteios necessários para conseguir ter acertado 4 numeros.
+          </p>
+          <button class="btn btn-primary" onclick="ate4MegaSena()">
+            Jogar
+          </button>
+          <p id="sorteados4"></p>
+          <br />
+          <p>
+            Agora, ao clicar no botão abaixo, ele irá jogar
+            10000 vezes e retornar a média de sorteios necessários para acertar exatamente 4 numeros.
+          </p>        
+          <button class="btn btn-primary" onclick="estimarMegaSena4()">
+            Estimar
+          </button>
+          <br />
+          <p id="sorteando2" style="display: none">
+            Relizando testes, aguarde...
+          </p>
+          <p id="sorteados5"></p>
+          <p>Como as chances de acertar 4 vezes são muito maiores de se acertar na quina, eu pude aumentar a quantidade de testes realizados de 100 para 10000 e manter a faixa de "alguns segundos" para terminar todos os testes.</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <script src="codes.js"></script>
-</body>
+    <script src="codes.js"></script>
+  </body>
 </html>
