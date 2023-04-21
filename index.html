@@ -14,6 +14,8 @@
   <body>
     <h1>Trabalho 1 Probabilidade e Estatistica</h1>
     <h5>Caio Cohen de Souza - 119021543</h5>
+    <h5>Daniel Levacov - 118028241</h5>
+    <h5>Bernardo Ventura - 119164074</h5>
     <div class="container">
       <p>
         Introdução: As questões do trabalho 1 serão todas respondidas nessa
@@ -165,13 +167,13 @@
           Sena são sorteados 6 números de 1 a 60 aleatoriamente sem repetições.
         </p>
         <p>A funções usadas nas questão 2 foram:</p>
-      <ul>
-        <li>jogarMegaSenaQuina()</li>
-        <li>ateQuinaMegaSena()</li>
-        <li>estimarMegaSenaQuina()</li>
-        <li>ate4MegaSena()</li>
-        <li>estimarMegaSena4()</li>
-      </ul>
+        <ul>
+          <li>jogarMegaSenaQuina()</li>
+          <li>ateQuinaMegaSena()</li>
+          <li>estimarMegaSenaQuina()</li>
+          <li>ate4MegaSena()</li>
+          <li>estimarMegaSena4()</li>
+        </ul>
         <!--Questão 2-1-->
         <p>
           1. Escolha um bilhete de 6 números. Escreva um programa que simule um
@@ -291,12 +293,16 @@
 
         <!--Questão 2-4-->
         <p>
-            4. Utilize o programa criado no item anterior para estimar a probabilidade de acertar exatamente 4 números
-            da Mega Sena tendo escolhido um bilhete de 6 números.
+          4. Utilize o programa criado no item anterior para estimar a
+          probabilidade de acertar exatamente 4 números da Mega Sena tendo
+          escolhido um bilhete de 6 números.
         </p>
         <div class="resposta">
           <p>
-            <span class="bold">Resposta:</span> Assim como no item 2-2, ainda usando os valores inputados no primeiro item, ao clicar no botão abaixo, ele te dirá o numero de sorteios necessários para conseguir ter acertado 4 numeros.
+            <span class="bold">Resposta:</span> Assim como no item 2-2, ainda
+            usando os valores inputados no primeiro item, ao clicar no botão
+            abaixo, ele te dirá o numero de sorteios necessários para conseguir
+            ter acertado 4 numeros.
           </p>
           <button class="btn btn-primary" onclick="ate4MegaSena()">
             Jogar
@@ -304,9 +310,10 @@
           <p id="sorteados4"></p>
           <br />
           <p>
-            Agora, ao clicar no botão abaixo, ele irá jogar
-            10000 vezes e retornar a média de sorteios necessários para acertar exatamente 4 numeros.
-          </p>        
+            Agora, ao clicar no botão abaixo, ele irá jogar 10000 vezes e
+            retornar a média de sorteios necessários para acertar exatamente 4
+            numeros.
+          </p>
           <button class="btn btn-primary" onclick="estimarMegaSena4()">
             Estimar
           </button>
@@ -315,8 +322,35 @@
             Relizando testes, aguarde...
           </p>
           <p id="sorteados5"></p>
-          <p>Como as chances de acertar 4 vezes são muito maiores de se acertar na quina, eu pude aumentar a quantidade de testes realizados de 100 para 10000 e manter a faixa de "alguns segundos" para terminar todos os testes.</p>
+          <p>
+            Como as chances de acertar 4 vezes são muito maiores de se acertar
+            na quina, eu pude aumentar a quantidade de testes realizados de 100
+            para 10000 e manter a faixa de "alguns segundos" para terminar todos
+            os testes.
+          </p>
         </div>
+        
+        <!--Questão 3-->
+        <p>
+          <span class="bold">Questão 3: </span>Considere uma disputa em que o jogador A jogue com a pontos e o jogador B com b pontos. Uma
+          partida deste jogo consiste em 1) o jogador A lança 2 dados e soma o valor das duas faces com a, 2) o jogador
+          B lança 2 dados e soma aos seus pontos b 3) o jogador que obtiver o maior resultado final vence a rodada,
+          4) o vencedor do jogo é aquele que for o primeiro a vencer 10 rodadas. Com o auxílio de um programa de
+          computador, estime a probabilidade de que o jogador A vença quando
+        </p>
+        <div class="col-md-4">
+          <ul>
+            <li class="disputas">a = 7 e b = 8. <button class="btn btn-primary" onclick="disputarXVezes(7,8,1)">Calcular</button><span id="disputa1"></span></li>
+            <li class="disputas">a = 8 e b = 10. <button class="btn btn-primary" onclick="disputarXVezes(8,10,2)">Calcular</button><span id="disputa2"></span></li>
+            <li class="disputas">a = 6 e b = 10. <button class="btn btn-primary" onclick="disputarXVezes(6,10,3)">Calcular</button><span id="disputa3"></span></li>
+            <li class="disputas">a = 8 e b = 11. <button class="btn btn-primary" onclick="disputarXVezes(8,11,4)">Calcular</button><span id="disputa4"></span></li>
+          </ul>
+        </div>
+        <div class="col-md-8 input-disputa">
+            <label>Escreva abaixo o número de vezes que as disputas acontecerão:</label>
+          <input id="numeroDisputa">
+        </div>
+        
       </div>
     </div>
     <script src="codes.js"></script>

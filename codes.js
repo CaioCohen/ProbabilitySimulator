@@ -293,5 +293,40 @@ function estimarMegaSena4() {
 
 //FUNCOES QUESTÃO 3
 
+function rodada(a, b){
+    a += jogarDado();
+    a += jogarDado(); //Jogou dois dados e somou o valor a "a"
+    b += jogarDado();
+    b += jogarDado(); //mesma coisa com "b"
+
+    return a > b ? 1 : b > a ? 0 : -1; // retorna 1 se a ganhou, retorna 0 se b ganhou, retorna -1 se empatou
+}
+
+function disputar(a, b){
+    let vitoriasa = 0;
+    let vitoriasb = 0;
+    while(vitoriasa < 10 && vitoriasb < 10){
+        let resultado = rodada(a, b);
+        switch(resultado){
+            case(1):
+                vitoriasa++;
+                break;
+            case(0):
+                vitoriasb++;
+                break;
+        }
+    }
+    return vitoriasa == 10 ? 1 : 0;
+}
+
+function disputarXVezes(a, b, id){
+    let n = 0;
+    let x = +document.getElementById("numeroDisputa").value;
+    for(let i = 0; i < x; i++){
+        n = disputar(a,b) == 1 ? n + 1 : n;
+    }
+    document.getElementById(`disputa${id}`).innerHTML = `O jogador A venceu ${n} partidas de ${x}, logo, a probabilidade estimada de ele ganhar foi de ${(n*100)/x}%`;
+}
+
 
 
