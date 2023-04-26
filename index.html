@@ -329,28 +329,73 @@
             os testes.
           </p>
         </div>
-        
+
         <!--Questão 3-->
         <p>
-          <span class="bold">Questão 3: </span>Considere uma disputa em que o jogador A jogue com a pontos e o jogador B com b pontos. Uma
-          partida deste jogo consiste em 1) o jogador A lança 2 dados e soma o valor das duas faces com a, 2) o jogador
-          B lança 2 dados e soma aos seus pontos b 3) o jogador que obtiver o maior resultado final vence a rodada,
-          4) o vencedor do jogo é aquele que for o primeiro a vencer 10 rodadas. Com o auxílio de um programa de
-          computador, estime a probabilidade de que o jogador A vença quando
+          <span class="bold">Questão 3: </span>Considere uma disputa em que o
+          jogador A jogue com a pontos e o jogador B com b pontos. Uma partida
+          deste jogo consiste em 1) o jogador A lança 2 dados e soma o valor das
+          duas faces com a, 2) o jogador B lança 2 dados e soma aos seus pontos
+          b 3) o jogador que obtiver o maior resultado final vence a rodada, 4)
+          o vencedor do jogo é aquele que for o primeiro a vencer 10 rodadas.
+          Com o auxílio de um programa de computador, estime a probabilidade de
+          que o jogador A vença quando
         </p>
         <div class="col-md-4">
           <ul>
-            <li class="disputas">a = 7 e b = 8. <button class="btn btn-primary" onclick="disputarXVezes(7,8,1)">Calcular</button><span id="disputa1"></span></li>
-            <li class="disputas">a = 8 e b = 10. <button class="btn btn-primary" onclick="disputarXVezes(8,10,2)">Calcular</button><span id="disputa2"></span></li>
-            <li class="disputas">a = 6 e b = 10. <button class="btn btn-primary" onclick="disputarXVezes(6,10,3)">Calcular</button><span id="disputa3"></span></li>
-            <li class="disputas">a = 8 e b = 11. <button class="btn btn-primary" onclick="disputarXVezes(8,11,4)">Calcular</button><span id="disputa4"></span></li>
+            <li class="disputas">
+              a = 7 e b = 8.
+              <button class="btn btn-primary" onclick="disputarXVezes(7,8,1)">
+                Calcular</button
+              ><span id="disputa1"></span>
+            </li>
+            <li class="disputas">
+              a = 8 e b = 10.
+              <button class="btn btn-primary" onclick="disputarXVezes(8,10,2)">
+                Calcular</button
+              ><span id="disputa2"></span>
+            </li>
+            <li class="disputas">
+              a = 6 e b = 10.
+              <button class="btn btn-primary" onclick="disputarXVezes(6,10,3)">
+                Calcular</button
+              ><span id="disputa3"></span>
+            </li>
+            <li class="disputas">
+              a = 8 e b = 11.
+              <button class="btn btn-primary" onclick="disputarXVezes(8,11,4)">
+                Calcular</button
+              ><span id="disputa4"></span>
+            </li>
           </ul>
         </div>
         <div class="col-md-8 input-disputa">
-            <label>Escreva abaixo o número de vezes que as disputas acontecerão:</label>
-          <input id="numeroDisputa">
+          <div class="row">
+            <div class="col-md-12">
+              <label
+                >Escreva abaixo o número de vezes que as disputas
+                acontecerão:</label
+              >
+              <input id="numeroDisputa" />
+            </div>
+            <div class="col-md-12">
+              <div class="col-md-8">
+                <p>As funções usadas para a questão 3 foram:</p>
+                <ul>
+                  <li>
+                    rodada(a,b)
+                  </li>
+                  <li>
+                    disputar(a,b)
+                  </li>
+                  <li>
+                    disputarXVezes(a,b,id)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
     <script src="codes.js"></script>
